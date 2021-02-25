@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
+    public bool canShoot;
+    public GameObject bulletPrefab;
+    public Transform attack_Point;
 
     [Header("Set in Inspector: Enemy")]
     public float speed = 10f; // The speed in m/s
