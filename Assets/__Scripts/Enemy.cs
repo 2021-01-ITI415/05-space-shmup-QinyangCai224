@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour {
-    public bool canShoot;
-    public GameObject EnemyBulletPrefab;
-    public Transform attack_Point;
+public class Enemy : MonoBehaviour { 
    
 
     [Header("Set in Inspector: Enemy")]
@@ -24,6 +21,7 @@ public class Enemy : MonoBehaviour {
     public bool notifiedOfDestruction = false; // Will be used later
 
     protected BoundsCheck bndCheck;
+
 
     private void Awake()
     {
@@ -129,4 +127,5 @@ public class Enemy : MonoBehaviour {
         }
         showingDamage = false;
     }
-}
+
+    }
