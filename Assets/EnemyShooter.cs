@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShotter : MonoBehaviour
+public class EnemyShooter : MonoBehaviour
 {
     public float speed = 5f;
     public float rotate_Speed = 50f;
