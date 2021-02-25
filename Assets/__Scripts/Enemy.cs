@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
     public bool canShoot;
-    public GameObject bulletPrefab;
+    public GameObject EnemyBulletPrefab;
     public Transform attack_Point;
+   
 
     [Header("Set in Inspector: Enemy")]
     public float speed = 10f; // The speed in m/s
