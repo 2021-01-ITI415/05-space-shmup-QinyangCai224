@@ -26,6 +26,8 @@ public class EnemyShooter : MonoBehaviour
                 rotate_Speed *= -1f;
             }
         }
+        if (canShoot)
+            Invoke("StartShooting", Random.Range(1f, 3f));
     }
 
     // Update is called once per frame
@@ -50,6 +52,33 @@ public class EnemyShooter : MonoBehaviour
         if (canRotate)
         {
             transform.Rotate(new Vector3(0f, 0f, rotate_Speed * Time.deltaTime), Space.World);
+        }
+    }
+    void StartShooting()
+    {
+        GameObject bullet = Instantiate(EnemybulletPrefab, attack_Point.position, Quaternion.identity);
+        bullet.GetComponent<Bullet>().is_EnemyBullet = true;
+
+        if (canShoot)
+            Invoke("StartShooting", Random.Range(1f, 3f));
+    }
+
+    void TurnOffGameObject()
+    {
+        gameObject.SetActive(false);
+    }
+    void OnTriggerEnter(Collider target)
+    {
+        if (target.tag == "Bullet")
+        {
+            canMove = false;
+
+            if (canShoot)
+            {
+                canShoot = false;
+                CancelInvoke("StartShooting");
+            }
+            Invoke("TurnOffGameObject", 3f);
         }
     }
 }

@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
 
         if(Random.Range(0, 2) > 0)
         {
-            Instantiate(enemyshooterPrefab, temp, Quaternion.Euler(0f, 0f, -90f));
+            Instantiate(enemyshooterPrefab, temp, Quaternion.Euler(0f, 0f, 0f));
         }
         Invoke("SpawnEnemies", 1f / enemySpawnPerSecond);
     }
