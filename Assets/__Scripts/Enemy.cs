@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : MonoBehaviour { 
+   
 
     [Header("Set in Inspector: Enemy")]
     public float speed = 10f; // The speed in m/s
@@ -20,6 +21,7 @@ public class Enemy : MonoBehaviour {
     public bool notifiedOfDestruction = false; // Will be used later
 
     protected BoundsCheck bndCheck;
+
 
     private void Awake()
     {
@@ -125,4 +127,5 @@ public class Enemy : MonoBehaviour {
         }
         showingDamage = false;
     }
-}
+
+    }
